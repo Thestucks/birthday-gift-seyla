@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0F5"/>
+      <stop offset="100%" stop-color="#FFB3C6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="20" fill="url(#bg6)"/>
+  
+  <!-- Cute Gift Box with Ribbon & Hearts -->
+  <g transform="translate(200, 200)">
+    <!-- Box Body -->
+    <rect x="-55" y="-30" width="110" height="90" rx="12" fill="#FFFFFF" stroke="#FFA6C1" stroke-width="2"/>
+    <!-- Lid -->
+    <rect x="-62" y="-45" width="124" height="22" rx="6" fill="#FF85A1"/>
+    <!-- Vertical Ribbon -->
+    <rect x="-12" y="-45" width="24" height="105" fill="#FF6584"/>
+    <!-- Big Bow -->
+    <path d="M-35,-65 C-55,-65 -50,-40 -12,-48 C-45,-40 -25,-60 0,-50 Z" fill="#FF6584"/>
+    <path d="M35,-65 C55,-65 50,-40 12,-48 C45,-40 25,-60 0,-50 Z" fill="#FF6584"/>
+    <circle cx="0" cy="-48" r="10" fill="#D84A75"/>
+    
+    <!-- Floating Hearts -->
+    <text x="-65" y="-10" font-size="22">🎀</text>
+    <text x="50" y="20" font-size="22">💖</text>
+  </g>
+  
+  <text x="200" y="350" font-family="'Quicksand', sans-serif" font-weight="700" font-size="18" fill="#70263E" text-anchor="middle">A Box Full of Love 🎀</text>
+  <text x="200" y="375" font-family="'Quicksand', sans-serif" font-weight="500" font-size="13" fill="#A24A68" text-anchor="middle">(Ganti dengan Foto Seyla 6)</text>
+</svg>
