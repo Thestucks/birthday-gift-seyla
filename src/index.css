@@ -1,0 +1,201 @@
+:root {
+  --font-main: 'Quicksand', 'Plus Jakarta Sans', sans-serif;
+  --font-handwriting: 'Caveat', cursive;
+  
+  --color-bg-primary: #FFF0F5;
+  --color-bg-secondary: #FFE4EC;
+  --color-pink-soft: #FFD1DC;
+  --color-pink-main: #FF85A1;
+  --color-pink-deep: #D84A75;
+  --color-berry: #70263E;
+  --color-card-bg: rgba(255, 253, 249, 0.92);
+  --color-mint: #CBEAD6;
+  --color-text-dark: #3F3338;
+  --color-text-muted: #7E6B74;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-main);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-dark);
+}
+
+body {
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFEBF1 50%, #FFDFEB 100%);
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF0F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFB3C6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF85A1;
+}
+
+/* Typography Helpers */
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: var(--color-card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 182, 193, 0.45);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(255, 133, 161, 0.12);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 16px 36px rgba(255, 133, 161, 0.2);
+}
+
+/* Polaroid Card Effect */
+.polaroid-frame {
+  background: #FFFFFF;
+  padding: 14px 14px 22px 14px;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(112, 38, 62, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-6px) rotate(1deg) scale(1.02);
+  box-shadow: 0 20px 38px rgba(112, 38, 62, 0.18);
+}
+
+/* Washi Tape Accent */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 22px;
+  background: rgba(255, 182, 193, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 2px dashed rgba(255, 255, 255, 0.6);
+  border-right: 2px dashed rgba(255, 255, 255, 0.6);
+}
+
+/* Cute Buttons */
+.btn-cute-primary {
+  background: linear-gradient(135deg, #FF85A1 0%, #FF6584 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 101, 132, 0.35);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-cute-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(255, 101, 132, 0.45);
+}
+
+.btn-cute-primary:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-cute-secondary {
+  background: #FFFDF9;
+  color: #D84A75;
+  border: 1.5px solid #FFB3C6;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cute-secondary:hover {
+  background: #FFF0F5;
+  border-color: #FF85A1;
+  transform: translateY(-2px);
+}
+
+/* Floating Animation */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+/* Vinyl Spin Animation */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+/* Falling Flower Petals Canvas / Container */
+.petals-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Pulse Glow */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
