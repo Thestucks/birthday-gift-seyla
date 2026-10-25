@@ -9,9 +9,9 @@ export default function MusicPlayer({ isAutoPlayRequested }) {
   const synthTimerRef = useRef(null);
   const audioCtxRef = useRef(null);
 
-  // Path ke file audio di folder assets/music
+  // Path ke file audio di folder asset
   const BASE_URL = import.meta.env.BASE_URL;
-  const audioFilePath = `${BASE_URL}assets/music/birthday.mp3`;
+  const audioFilePath = `${BASE_URL}asset/hbdsong.mp3`;
 
   // Web Audio API Music Box Fallback (Happy Birthday melody)
   const notes = [

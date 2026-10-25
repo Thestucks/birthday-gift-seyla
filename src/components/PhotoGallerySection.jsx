@@ -1,85 +1,101 @@
 import React, { useState } from 'react';
-import { Camera, X, Heart, Sparkles, ZoomIn } from 'lucide-react';
+import { Camera, X, Sparkles, ZoomIn } from 'lucide-react';
 
 export default function PhotoGallerySection() {
   const BASE_URL = import.meta.env.BASE_URL;
 
-  // Daftar foto galeri umum Seyla
+  // 10 Foto asli Seyla dari folder asset (1.jpg - 10.jpg)
   const initialPhotos = [
     {
       id: 1,
-      preferredSrc: `${BASE_URL}assets/images/seyla1.jpg`,
-      fallbackSrc: `${BASE_URL}assets/images/photo1.svg`,
+      src: `${BASE_URL}asset/1.jpg`,
       title: 'Blooming Beauty 🌸',
-      caption: 'Senyuman termanis yang selalu menghangatkan suasana di sekitar!',
+      caption: 'Senyuman manis yang selalu menghangatkan suasana!',
       date: '24 Oktober',
       rotation: '-2deg',
     },
     {
       id: 2,
-      preferredSrc: `${BASE_URL}assets/images/seyla2.jpg`,
-      fallbackSrc: `${BASE_URL}assets/images/photo2.svg`,
-      title: 'Sweet & Silly Moment 🧋',
-      caption: 'Momen santai, segelas kopi enak, dan tawa lepas yang tak terlupakan.',
-      date: 'Forever Young',
-      rotation: '3deg',
+      src: `${BASE_URL}asset/2.jpg`,
+      title: 'Sweet & Charming 🎀',
+      caption: 'Pesona cantiknya Seyla yang selalu memukau dan anggun.',
+      date: 'Sweet Soul',
+      rotation: '2.5deg',
     },
     {
       id: 3,
-      preferredSrc: `${BASE_URL}assets/images/seyla3.jpg`,
-      fallbackSrc: `${BASE_URL}assets/images/photo3.svg`,
-      title: '23rd Birthday Joy 🎂',
-      caption: 'Merayakan usia baru dengan penuh rasa syukur dan harapan baik.',
-      date: 'Level 23',
+      src: `${BASE_URL}asset/3.jpg`,
+      title: 'Candid & Good Vibes ✨',
+      caption: 'Tawa renyah dan keceriaan yang nggak pernah ada habisnya.',
+      date: 'Forever Young',
       rotation: '-1.5deg',
     },
     {
       id: 4,
-      preferredSrc: `${BASE_URL}assets/images/seyla4.jpg`,
-      fallbackSrc: `${BASE_URL}assets/images/photo4.svg`,
-      title: 'Precious Memories 📸',
-      caption: 'Setiap detik kebersamaan selalu menjadi kenangan yang berharga.',
-      date: 'Best Moments',
-      rotation: '2.5deg',
+      src: `${BASE_URL}asset/4.jpg`,
+      title: 'Forever Cute 🌷',
+      caption: 'Selalu punya gaya dan ekspresi yang paling menggemaskan!',
+      date: 'Cute Vibes',
+      rotation: '2deg',
     },
     {
       id: 5,
-      preferredSrc: `${BASE_URL}assets/images/seyla5.jpg`,
-      fallbackSrc: `${BASE_URL}assets/images/photo5.svg`,
-      title: 'Garden of Happiness 🌷',
-      caption: 'Mekar dan bertumbuh menjadi sosok yang semakin luar biasa.',
-      date: 'Happy Soul',
+      src: `${BASE_URL}asset/5.jpg`,
+      title: 'Shining Bright 💖',
+      caption: 'Makin bertambah usia, auranya makin memancarkan pesona positif.',
+      date: 'Level 23',
       rotation: '-2.5deg',
     },
     {
       id: 6,
-      preferredSrc: `${BASE_URL}assets/images/seyla6.jpg`,
-      fallbackSrc: `${BASE_URL}assets/images/photo6.svg`,
-      title: 'Gift of Friendship 🎀',
-      caption: 'Terima kasih sudah selalu menjadi sahabat yang begitu berharga!',
-      date: 'Special Edition',
+      src: `${BASE_URL}asset/6.jpg`,
+      title: 'Precious Moments 📸',
+      caption: 'Setiap detik dan kenangan indah yang selalu tersimpan rapi.',
+      date: 'Memory Lane',
       rotation: '1.5deg',
+    },
+    {
+      id: 7,
+      src: `${BASE_URL}asset/7.jpg`,
+      title: 'Lovely Sunshine 🌼',
+      caption: 'Membawa kehangatan dan kebahagiaan untuk orang-orang tersayang.',
+      date: 'Sunny Day',
+      rotation: '-2deg',
+    },
+    {
+      id: 8,
+      src: `${BASE_URL}asset/8.jpg`,
+      title: 'Bestie Energy 🌺',
+      caption: 'Sahabat terbaik yang selalu seru diajak cerita, curhat, dan bercanda.',
+      date: 'Best Friend',
+      rotation: '2.5deg',
+    },
+    {
+      id: 9,
+      src: `${BASE_URL}asset/9.jpg`,
+      title: 'Sweet 23rd Year 🍰',
+      caption: 'Menyambut usia ke-23 dengan penuh rasa syukur dan harapan baru.',
+      date: 'Birthday Joy',
+      rotation: '-1deg',
+    },
+    {
+      id: 10,
+      src: `${BASE_URL}asset/10.jpg`,
+      title: 'Forever Loved 💐',
+      caption: 'Terima kasih sudah menjadi sosok yang begitu istimewa, Seyla!',
+      date: 'Special Edition',
+      rotation: '2deg',
     },
   ];
 
   const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [imageSources, setImageSources] = useState(
-    initialPhotos.reduce((acc, p) => ({ ...acc, [p.id]: p.preferredSrc }), {})
-  );
-
-  const handleImageError = (id, fallback) => {
-    setImageSources((prev) => ({
-      ...prev,
-      [id]: fallback,
-    }));
-  };
 
   return (
     <section
       id="gallery"
       style={{
         padding: '70px 20px',
-        maxWidth: '1140px',
+        maxWidth: '1200px',
         margin: '0 auto',
       }}
     >
@@ -97,7 +113,7 @@ export default function PhotoGallerySection() {
           }}
         >
           <Camera size={18} />
-          <span>Photo Scrapbook</span>
+          <span>Seyla\'s Photo Scrapbook</span>
           <Sparkles size={18} />
         </div>
         <h2
@@ -111,7 +127,7 @@ export default function PhotoGallerySection() {
           Galeri Kenangan Manis Seyla 🌸
         </h2>
         <p style={{ color: '#7E6B74', marginTop: '6px', fontSize: '0.95rem' }}>
-          Koleksi foto polaroid berbingkai bunga pink. Klik foto untuk melihat lebih jelas!
+          10 potret polaroid manis berbingkai bunga pink. Klik foto mana saja untuk memperbesar!
         </p>
       </div>
 
@@ -119,8 +135,8 @@ export default function PhotoGallerySection() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '34px 24px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+          gap: '34px 22px',
           padding: '10px',
         }}
       >
@@ -141,7 +157,7 @@ export default function PhotoGallerySection() {
             <div
               style={{
                 width: '100%',
-                aspectRatio: '1 / 1',
+                aspectRatio: '1 / 1.15',
                 overflow: 'hidden',
                 borderRadius: '8px',
                 background: '#FFEBF1',
@@ -149,9 +165,9 @@ export default function PhotoGallerySection() {
               }}
             >
               <img
-                src={imageSources[photo.id]}
+                src={photo.src}
                 alt={photo.title}
-                onError={() => handleImageError(photo.id, photo.fallbackSrc)}
+                loading="lazy"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -164,7 +180,7 @@ export default function PhotoGallerySection() {
                 style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'rgba(216, 74, 117, 0.15)',
+                  background: 'rgba(216, 74, 117, 0.2)',
                   opacity: 0,
                   transition: 'opacity 0.3s ease',
                   display: 'flex',
@@ -177,7 +193,7 @@ export default function PhotoGallerySection() {
               >
                 <div
                   style={{
-                    background: 'rgba(255, 133, 161, 0.85)',
+                    background: 'rgba(255, 133, 161, 0.9)',
                     padding: '8px 16px',
                     borderRadius: '9999px',
                     display: 'flex',
@@ -185,10 +201,11 @@ export default function PhotoGallerySection() {
                     gap: '6px',
                     fontWeight: 700,
                     fontSize: '0.85rem',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
                   }}
                 >
                   <ZoomIn size={16} />
-                  <span>Lihat Foto</span>
+                  <span>Perbesar</span>
                 </div>
               </div>
             </div>
@@ -232,24 +249,6 @@ export default function PhotoGallerySection() {
         ))}
       </div>
 
-      {/* Info Tip Cara Ganti Foto */}
-      <div
-        style={{
-          marginTop: '36px',
-          textAlign: 'center',
-          background: 'rgba(255, 255, 255, 0.75)',
-          padding: '12px 24px',
-          borderRadius: '16px',
-          border: '1px dashed #FFB3C6',
-          maxWidth: '680px',
-          margin: '36px auto 0',
-          fontSize: '0.88rem',
-          color: '#7E6B74',
-        }}
-      >
-        💡 <strong>Tips:</strong> Kamu dapat mengganti foto di atas dengan foto asli Seyla! Cukup letakkan file foto di folder <code>assets/images/</code> dengan nama <code>seyla1.jpg</code>, <code>seyla2.jpg</code>, dst.
-      </div>
-
       {/* Modal Zoom Foto */}
       {selectedPhoto && (
         <div
@@ -258,8 +257,8 @@ export default function PhotoGallerySection() {
             position: 'fixed',
             inset: 0,
             zIndex: 110,
-            background: 'rgba(63, 51, 56, 0.8)',
-            backdropFilter: 'blur(6px)',
+            background: 'rgba(63, 51, 56, 0.85)',
+            backdropFilter: 'blur(8px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -270,12 +269,14 @@ export default function PhotoGallerySection() {
             onClick={(e) => e.stopPropagation()}
             className="glass-card"
             style={{
-              maxWidth: '520px',
+              maxWidth: '540px',
               width: '100%',
-              padding: '24px',
+              padding: '20px',
               background: '#FFFFFF',
               position: 'relative',
               borderRadius: '24px',
+              maxHeight: '90vh',
+              overflowY: 'auto',
             }}
           >
             <button
@@ -294,6 +295,7 @@ export default function PhotoGallerySection() {
                 justifyContent: 'center',
                 cursor: 'pointer',
                 color: '#70263E',
+                zIndex: 10,
               }}
             >
               <X size={20} />
@@ -302,26 +304,28 @@ export default function PhotoGallerySection() {
             <div
               style={{
                 width: '100%',
-                maxHeight: '440px',
+                maxHeight: '65vh',
                 borderRadius: '16px',
                 overflow: 'hidden',
                 background: '#FFF0F5',
                 marginBottom: '16px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <img
-                src={imageSources[selectedPhoto.id]}
+                src={selectedPhoto.src}
                 alt={selectedPhoto.title}
                 style={{
                   width: '100%',
-                  height: '100%',
-                  maxHeight: '440px',
+                  maxHeight: '65vh',
                   objectFit: 'contain',
                 }}
               />
             </div>
 
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', padding: '0 10px 10px' }}>
               <h3
                 style={{
                   fontSize: '1.4rem',
@@ -334,13 +338,27 @@ export default function PhotoGallerySection() {
               </h3>
               <p
                 style={{
-                  fontSize: '1rem',
+                  fontSize: '0.95rem',
                   color: '#55424B',
                   lineHeight: 1.6,
                 }}
               >
                 {selectedPhoto.caption}
               </p>
+              <span
+                style={{
+                  display: 'inline-block',
+                  marginTop: '10px',
+                  fontSize: '0.8rem',
+                  color: '#D84A75',
+                  fontWeight: 700,
+                  background: '#FFEBF1',
+                  padding: '4px 14px',
+                  borderRadius: '9999px',
+                }}
+              >
+                🌸 {selectedPhoto.date} 🌸
+              </span>
             </div>
           </div>
         </div>
